@@ -8,4 +8,6 @@ gem "dotenv"
 group :test do
   gem 'rspec'
   gem 'pry'
+  gem 'webmock'
+  gem 'vcr' 
 end

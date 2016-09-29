@@ -30,8 +30,8 @@ class TwitterApi
   end
 
   def get_dates
-    tweets.each do |tweet|
-      Date.strptime(tweet.created_at,"%d/%m/%Y")
+    tweets.map do |tweet|
+      tweet.created_at.strftime("%d/%m/%Y")
     end
   end
 

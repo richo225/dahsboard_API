@@ -1,7 +1,7 @@
 Integrations Engineer Coding Challenge
 ======================================
 
-A small ruby command line program written for [Geckoboard](https://www.geckoboard.com/). The program pulls data from an external Twitter API and pushes it to the Geckoboard datasets API at regular intervals.
+A small ruby command line program written for Geckoboard. The program pulls data from an external Twitter API and pushes it to the Geckoboard datasets API at regular intervals.
 
 Installation
 ------------
@@ -20,9 +20,10 @@ $ ruby quickstart.rb
 ```
 NOTE
 -----
-- I have not included the dashboard link because there are still no widgets there. The datasets are created but no data has been pushed in yet.
+- I have not included the dashboard link because there are still no widgets there. The datasets are created but no data has been pushed.
 - I prioritised having a **fully tested and refactored MVP** that pulls and collects data instead of a half-working dashboard.
-- Any API keys or auth tokens are inside the dotenv file. You will therefore need to provide your own API and auth keys for twitter and geckoboard.
+- Any API keys or auth tokens are inside the dotenv file. You will therefore need to provide your own API and auth keys for twitter and geckoboard. 
+- VCR cassettes are also in the dotenv file but will be created the first time the tests are run.
 
 About
 -----
@@ -84,8 +85,6 @@ Challenges
 Most of my time was spent on testing the methods involved in the twitter gem API calls. I had no experience with VCR or WebMock before but they proved really useful in stopping the program reaching the Twitter API limit from running Rspec. The gems are involved in intercepting any API calls to twitter, saving them to a cassette in the spec folder which are then re-used in future Rspec runs. It was a great learning experience.
 
 The program currently pulls twitter data at intervals and creates a dataset visible in the dashboard. Unfortunately, because of the time spent on testing, I am still yet to implement the dashboard widgets with data. This should be simple enough via the `put` method and playing around on the various dashboard app features.
-
-NOTE - Any API keys or auth tokens are inside my .env file that are not committed. You will therefore need to provide your own API keys for twitter and geckoboard in order for the program to work. This is something I still need to change.
 
 Future implementations
 ----------------------

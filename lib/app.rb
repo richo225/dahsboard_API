@@ -5,7 +5,7 @@ require 'pry'
 Dotenv.load
 
 class TwitterApi
-  attr_reader :client, :tweets, :dates
+  attr_reader :client, :tweets, :dates, :twitter_data
   attr_writer :dates
 
   def initialize
@@ -42,6 +42,15 @@ class TwitterApi
 
   def follower_rate
     (get_followers.to_f / time_period).round(2)
+  end
+
+  def build_twitter_data
+    get_dates
+    @twitter_data = {
+      followers: get_followers,
+      tweets: get_tweets,
+      rate: follower_rate
+    }
   end
 
   private

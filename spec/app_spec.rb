@@ -62,4 +62,18 @@ describe TwitterApi do
       end
     end
   end
+
+  describe "#build_twitter_data" do
+    it "returns a hash of all the twitter data" do
+      VCR.use_cassette("twitter/build_twitter_data") do
+        twitter.dates = [DateTime.new(2010,1), DateTime.new(2012,2)]
+        expect(twitter.build_twitter_data).to eq({
+          followers: 20,
+          tweets: 14,
+          rate: 0.8
+        })
+      end
+    end
+  end
+
 end

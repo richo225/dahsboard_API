@@ -45,6 +45,7 @@ class TwitterApi
   end
 
   def build_twitter_data
+    get_dates
     @twitter_data = {
       followers: get_followers,
       tweets: get_tweets,

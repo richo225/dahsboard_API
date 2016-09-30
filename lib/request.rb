@@ -25,6 +25,6 @@ class Request
     dataset.put(data.build_twitter_data)
   end
 
-  # binding pry
+  binding pry
 
 end

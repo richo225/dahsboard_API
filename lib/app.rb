@@ -1,11 +1,12 @@
-require 'rubygems'
 require 'twitter'
+require 'time_difference'
 require 'dotenv'
 require 'pry'
 Dotenv.load
 
 class TwitterApi
-  attr_reader :client, :tweets
+  attr_reader :client, :tweets, :dates
+  attr_writer :dates
 
   def initialize
     @client = Twitter::REST::Client.new do |config|
@@ -30,17 +31,27 @@ class TwitterApi
   end
 
   def get_dates
-    tweets.map do |tweet|
-      tweet.created_at.strftime("%d/%m/%Y")
+    @dates = tweets.map do |tweet|
+      tweet.created_at
     end
   end
 
-  def get_first_tweet
-    tweets.first
+  def time_period
+    TimeDifference.between(first_tweet,last_tweet).in_months.round
   end
 
-  def get_last_tweet
-    tweets.last
+  def follower_rate
+    (get_followers.to_f / time_period).round(2)
+  end
+
+  private
+
+  def first_tweet
+    dates.first
+  end
+
+  def last_tweet
+    dates.last
   end
 
   # binding.pry

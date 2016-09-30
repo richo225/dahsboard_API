@@ -4,7 +4,7 @@ require "twitter"
 describe TwitterApi do
 
   before :each do
-    WebMock.disable_net_connect!
+    WebMock.allow_net_connect!
   end
 
   let(:twitter){TwitterApi.new}
@@ -45,5 +45,21 @@ describe TwitterApi do
     end
   end
 
+  describe "#get_first_tweet" do
+    it "gets the year of the first tweet" do
+      VCR.use_cassette("twitter/time_period") do
+        twitter.dates = [DateTime.new(2010,1), DateTime.new(2012,2)]
+        expect(twitter.time_period).to eq(25)
+      end
+    end
+  end
 
+  describe "#follower_rate" do
+    it "returns the rate of followers per month" do
+      VCR.use_cassette("twitter/follower_rate") do
+        twitter.dates = [DateTime.new(2010,1), DateTime.new(2012,2)]
+        expect(twitter.follower_rate).to eq(0.8)
+      end
+    end
+  end
 end

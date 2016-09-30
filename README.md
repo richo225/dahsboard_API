@@ -84,4 +84,15 @@ NOTE - Any API keys or auth tokens are inside my .env file that are not committe
 
 Future implementations
 ----------------------
-Apart from the mentions previously, I would really like to implement more data types from the Twitter API. The list below shows the huge number of methods available and due to careful design, these methods can be easily added. This also means other API's can be used and injected into the request object. I chose twitter because it would be fun to work with my own account but it would also be interesting to work with more business-oriented API's. For example, [Amee](https://www.amee.com/api) have an API which provides emission, revenue and employee data on businesses.
+Apart from the mentions previously, I would really like to implement more data types from the Twitter API. The list below shows the huge number of methods available for tweets and/or users and due to careful design, these methods can be easily added.
+```
+[2] pry(Request)> ls Twitter::User
+Twitter::Tweet#methods:
+  favorite_count    filter_level             in_reply_to_screen_name?  lang       possibly_sensitive   quoted_tweet?   retweeted?         source      uri  
+  favorite_count?   filter_level?            in_reply_to_status_id     lang?      possibly_sensitive?  reply?          retweeted_status   source?     url  
+  favorited         full_text                in_reply_to_status_id?    metadata   quote?               retweet?        retweeted_status?  text        user
+  favorited?        geo                      in_reply_to_tweet_id      metadata?  quoted_status        retweet_count   retweeted_tweet    text?       user?
+  favoriters_count  geo?                     in_reply_to_user_id       place      quoted_status?       retweet_count?  retweeted_tweet?   truncated
+  favorites_count   in_reply_to_screen_name  in_reply_to_user_id?      place?     quoted_tweet         retweeted       retweeters_count   truncated?
+  ```
+This also means other API's can be used and injected into the request object. I chose twitter because it would be fun to work with my own account but it would also be interesting to work with more business-oriented API's. For example, [Amee](https://www.amee.com/api) have an API which provides emission, revenue and employee data on businesses.

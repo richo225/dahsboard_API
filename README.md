@@ -14,13 +14,18 @@ Get the required gems:
 ```
 $ bundle install
 ```
-
-Running the app
----------------
-Run the quickstart file from the command line:
+Run the quickstart file:
 ```
 $ ruby quickstart.rb
 ```
+NOTE
+-----
+- I have not included the dashboard link because there are still no widgets there. The datasets are created but no data has been pushed in yet.
+- I prioritised having a **fully tested and refactored MVP** that pulls and collects data instead of a half-working dashboard.
+- Any API keys or auth tokens are inside the dotenv file. You will therefore need to provide your own API and auth keys for twitter and geckoboard.
+
+About
+-----
 The program is written in Ruby due to my familiarity with it and the ease with which I could design the program in an agile manner with seperate concerns etc. The main reason was also the wide range of gems available such as the twitter and the rufus-scheduler gem. The twitter gem adds a really handy ruby interface to the Twitter API that although clean and simple, did prove tricky to test. The rufus-scheduler gem allows the code in the quickstart.rb file to be run every 3s which can be modified easily.
 
 The program begins in the quickstart.rb file where a request class is instantiated and a twitter_api object is injected into it. The request object then has access to all of the twitter methods such as follower_count and follower_rate which can then be used to build data for the dataset to be pushed up to the dashboard.

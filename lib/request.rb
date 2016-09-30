@@ -5,8 +5,8 @@ require 'pry'
 Dotenv.load
 
 class Request
-  attr_reader :client, :data, :dataset
-  attr_writer :dataset
+  attr_reader :client, :data
+  attr_accessor :dataset
 
   def initialize(data)
     @client = Geckoboard.client(ENV["GECKO_KEY"])
@@ -21,10 +21,8 @@ class Request
     ])
   end
 
-  def update_dataset
-    dataset.put(data.build_twitter_data)
-  end
-
-  binding pry
+  # def update_dataset
+  #   dataset.put(data.build_twitter_data)
+  # end
 
 end

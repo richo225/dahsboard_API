@@ -5,8 +5,8 @@ require 'pry'
 Dotenv.load
 
 class TwitterApi
-  attr_reader :client, :tweets, :dates, :twitter_data
-  attr_writer :dates, :twitter_data
+  attr_reader :client, :tweets
+  attr_accessor :dates, :twitter_data
 
   def initialize
     @client = Twitter::REST::Client.new do |config|
@@ -62,7 +62,5 @@ class TwitterApi
   def last_tweet
     dates.last
   end
-
-  # binding.pry
 
 end

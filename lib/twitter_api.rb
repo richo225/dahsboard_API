@@ -6,7 +6,7 @@ Dotenv.load
 
 class TwitterApi
   attr_reader :client, :tweets, :dates, :twitter_data
-  attr_writer :dates
+  attr_writer :dates, :twitter_data
 
   def initialize
     @client = Twitter::REST::Client.new do |config|
@@ -45,7 +45,6 @@ class TwitterApi
   end
 
   def build_twitter_data
-    get_dates
     @twitter_data = {
       followers: get_followers,
       tweets: get_tweets,

@@ -31,6 +31,13 @@ Running the app
 
 Demonstration
 -------------
-
+```
+[2] pry(Request)> request.create_dataset
+=> #<Geckoboard::Dataset:0x007fdafbb4cfe8
+ @client=#<Geckoboard::DatasetsClient:0x007fdafb7dc958 @connection=#<Geckoboard::Connection:0x007fdafb40c828 @api_key="9f9ea329a7835d14531e342f8e5d3a90">>,
+ @fields={"followers"=>{"type"=>"number", "name"=>"Follower count"}, "rate"=>{"type"=>"number", "name"=>"Follower rate"}, "tweets"=>{"type"=>"number", "name"=>"Tweet count"}},
+ @id="twitter.data">
+[3] pry(Request)>
+```
 Future implementations
 ----------------------

@@ -1,4 +1,4 @@
-require "app"
+require "twitter_api"
 require "twitter"
 
 describe TwitterApi do
@@ -68,9 +68,9 @@ describe TwitterApi do
       VCR.use_cassette("twitter/build_twitter_data") do
         twitter.dates = [DateTime.new(2010,1), DateTime.new(2012,2)]
         expect(twitter.build_twitter_data).to eq({
-          followers: 20,
-          tweets: 14,
-          rate: 0.8
+          :followers=>19,
+          :tweets=>14,
+          :rate=>0.76
         })
       end
     end

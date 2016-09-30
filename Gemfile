@@ -2,10 +2,11 @@ source "https://rubygems.org"
 
 ruby '2.3.1'
 
-gem "twitter"
-gem "dotenv"
-gem "time_difference"
+gem 'twitter'
+gem 'dotenv'
+gem 'time_difference'
 gem 'geckoboard-ruby'
+gem 'rufus-scheduler'
 
 group :test do
   gem 'rspec'

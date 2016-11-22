@@ -36,20 +36,20 @@ describe TwitterApi do
     end
   end
 
-  describe "#get_dates" do
-    it "returns a list of tweet dates" do
-      VCR.use_cassette("twitter/get_dates") do
-        expect(twitter.get_dates.size).to eq(twitter.tweets.size)
-        # expect(twitter.get_dates).to all be_an_instance_of(DateTime)
-      end
-    end
-  end
-
   describe "#get_first_tweet" do
     it "gets the year of the first tweet" do
       VCR.use_cassette("twitter/time_period") do
         twitter.dates = [DateTime.new(2010,1), DateTime.new(2012,2)]
         expect(twitter.time_period).to eq(25)
+      end
+    end
+  end
+
+  describe "#get_dates" do
+    it "returns a list of tweet dates" do
+      VCR.use_cassette("twitter/get_dates") do
+        expect(twitter.get_dates.size).to eq(twitter.tweets.size)
+        # expect(twitter.get_dates).to all be_an_instance_of(DateTime)
       end
     end
   end

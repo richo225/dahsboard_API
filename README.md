@@ -20,9 +20,7 @@ $ ruby quickstart.rb
 ```
 NOTE
 -----
-- I have not included the dashboard link because there are still no widgets there. The datasets are created but no data has been pushed.
-- I prioritised having a **fully tested and refactored MVP** that pulls and collects data instead of a half-working dashboard.
-- Any API keys or auth tokens are inside the dotenv file. You will therefore need to provide your own API and auth keys for twitter and geckoboard. 
+- Any API keys or auth tokens are inside the dotenv file. You will therefore need to provide your own API and auth keys for twitter and geckoboard.
 - VCR cassettes are also in the dotenv file but will be created the first time the tests are run.
 
 About

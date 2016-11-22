@@ -21,8 +21,8 @@ class Request
     ])
   end
 
-  # def update_dataset
-  #   dataset.put(data.build_twitter_data)
-  # end
+  def update_dataset
+    dataset.put(data.build_twitter_data)
+  end
 
 end

@@ -8,7 +8,7 @@ scheduler.every '10s' do
   twitter_data = TwitterApi.new
   request = Request.new(twitter_data)
   request.create_dataset
-  # request.update_dataset
+  request.update_dataset
 end
 
 scheduler.join

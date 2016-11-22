@@ -1,7 +1,7 @@
-Integrations Engineer Coding Challenge
+Dashboard API program
 ======================================
 
-A small ruby command line program written for Geckoboard. The program pulls data from an external Twitter API and pushes it to the Geckoboard datasets API at regular intervals.
+A small ruby command line program that pulls data from an external Twitter API and pushes it to the Geckoboard datasets API at regular intervals.
 
 Installation
 ------------
